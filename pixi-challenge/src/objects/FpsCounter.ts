@@ -1,5 +1,5 @@
 import { Text, TextStyle } from "pixi.js";
-import type { DestroyOptions } from "pixi.js";
+import type { IDestroyOptions } from "pixi.js";
 import { app } from "../core/app";
 
 export class FpsCounter extends Text {
@@ -35,7 +35,7 @@ export class FpsCounter extends Text {
     }
   }
 
-  destroy(options?: boolean | DestroyOptions): void {
+  destroy(options?: boolean | IDestroyOptions): void {
     app.ticker.remove(this.updateFps, this);
     super.destroy(options);
   }

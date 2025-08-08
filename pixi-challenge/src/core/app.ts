@@ -6,9 +6,7 @@ export const app = new Application({
   backgroundColor: 0x000000,
   antialias: true,
 });
-
-document.body.appendChild(app.view);
-
+document.body.appendChild(app.view as unknown as HTMLCanvasElement);
 initDevtools({ app });
 
 window.addEventListener("resize", () => {

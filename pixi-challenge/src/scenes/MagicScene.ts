@@ -284,10 +284,12 @@ export async function showMagicScene() {
     }
   };
 
-  app.view.addEventListener?.("wheel", wheelHandler, { passive: false });
+  (window as Window).addEventListener("wheel", wheelHandler, {
+    passive: false,
+  });
 
   const cleanup = () => {
-    app.view.removeEventListener?.("wheel", wheelHandler);
+    (window as Window).removeEventListener("wheel", wheelHandler);
   };
 
   if (maxScroll > 0) {

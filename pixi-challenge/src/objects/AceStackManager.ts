@@ -8,7 +8,6 @@ export class AceStackManager {
   public stacks: Container[] = [];
   public cards: Card[] = [];
   private scene: Container;
-  private items: Container[] = []; // Initialize empty array
   private moveInterval: ReturnType<typeof setInterval> | null = null;
 
   constructor(scene: Container) {
@@ -103,7 +102,6 @@ export class AceStackManager {
     });
 
     // Clear references
-    this.items = [];
     this.cards = [];
     this.stacks = [];
     this.scene = null!;
