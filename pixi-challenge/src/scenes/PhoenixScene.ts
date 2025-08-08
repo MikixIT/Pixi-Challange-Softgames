@@ -156,6 +156,8 @@ export async function showPhoenixScene() {
       gsap.killTweensOf(label.scale);
       showMenu();
     });
+
+    backButton.position.set(300, 80);
     scene.addChild(backButton);
 
     const updateTicker = () => {
@@ -176,6 +178,6 @@ export async function showPhoenixScene() {
   }
 
   const fpsCounter = new FpsCounter();
-  fpsCounter.position.set(app.screen.width - 2000, 20);
+  fpsCounter.position.set(app.screen.width - 1600, 70);
   scene.addChild(fpsCounter);
 }

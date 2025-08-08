@@ -54,11 +54,6 @@ export async function showMagicScene() {
   scene.addChild(gradientOverlay);
 
   const header = new Container();
-  const headerBg = new Graphics();
-  headerBg.beginFill(0x16213e, 0.9);
-  headerBg.drawRect(0, 0, app.screen.width, 100);
-  headerBg.endFill();
-  header.addChild(headerBg);
 
   const title = new Text(
     "Magic Chat",
@@ -240,7 +235,7 @@ export async function showMagicScene() {
   let isDragging = false;
   let dragStartY = 0;
   let scrollStartY = 0;
-  const maxScroll = Math.max(0, y - (app.screen.height - 160));
+  const maxScroll = Math.max(0, y - (app.screen.height - 260));
 
   scene.eventMode = "static";
 
@@ -271,7 +266,7 @@ export async function showMagicScene() {
   const wheelHandler = (event: WheelEvent) => {
     if (maxScroll > 0) {
       event.preventDefault();
-      const scrollSpeed = 3;
+      const scrollSpeed = 6;
       const deltaY = event.deltaY * scrollSpeed;
       const newY = chatContainer.y - deltaY;
       const targetY = Math.max(-maxScroll, Math.min(0, newY));
@@ -292,22 +287,6 @@ export async function showMagicScene() {
     (window as Window).removeEventListener("wheel", wheelHandler);
   };
 
-  if (maxScroll > 0) {
-    const scrollIndicator = new Graphics();
-    scrollIndicator.beginFill(0x4ecdc4, 0.6);
-    scrollIndicator.drawRoundedRect(app.screen.width - 15, 120, 8, 100, 4);
-    scrollIndicator.endFill();
-    scene.addChild(scrollIndicator);
-
-    gsap.to(scrollIndicator, {
-      alpha: 0.3,
-      duration: 1.5,
-      repeat: -1,
-      yoyo: true,
-      ease: "power2.inOut",
-    });
-  }
-
   const fpsCounter = new FpsCounter();
   fpsCounter.position.set(app.screen.width - 150, 10);
   scene.addChild(fpsCounter);
@@ -322,14 +301,14 @@ export async function showMagicScene() {
     showMenu();
   });
   backButton.position.set(10, 20);
-  backButton.hitArea = new Rectangle(0, 0, backButton.width, backButton.height);
   backButton.eventMode = "static";
   backButton.cursor = "pointer";
-  scene.addChild(backButton);
-
-  gsap.from(scene, {
-    alpha: 0,
-    duration: 1,
-    ease: "power2.out",
+  backButton.children.forEach((child) => {
+    if (child instanceof Text) {
+      child.eventMode = "none";
+    }
   });
+
+  scene.addChild(backButton);
+  scene.setChildIndex(backButton, scene.children.length - 1);
 }
