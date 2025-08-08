@@ -17,42 +17,53 @@ This project contains the solution to the Softgames Game Developer challenge con
 
 ## Technical Details
 
-- Written entirely in **TypeScript**.
-- Uses **Pixi.js v7** for rendering all scenes.
-- Animations handled with **GSAP** for smooth transitions.
-- Responsive rendering for both desktop and mobile screen sizes.
-- Displays an FPS counter in the top-left corner.
-- Runs full screen for immersive experience.
-- All three tasks are accessible from a main in-game menu.
+- Written entirely in **TypeScript**
+- Uses **Pixi.js v7** for rendering all scenes
+- Animations handled with **GSAP** for smooth transitions
+- Responsive rendering for both desktop and mobile screen sizes
+- FPS counter displayed in the top-left corner
+- Fullscreen rendering for an immersive experience
+- All three tasks are accessible from a main in-game menu
 
 ---
 
-## Challenges & Notes
+## Features & Notes
 
-- I have **limited prior experience with Pixi.js**, and encountered some difficulties adapting to version 7.0, as many examples and tutorials are based on version 8.0.
-- The challenge was assigned around 2 PM with a strict **24-hour deadline**, so I had roughly half a day to work intensively on it.
-- To meet the deadline, I automated some repetitive tasks using AI assistance and focused on delivering a functional, clean solution.
-- While I am not fully satisfied with every detail, I’m proud to submit this work and grateful for the opportunity to learn and grow through your challenge.
-- My main background is as a **Fullstack Developer for web applications**, and this experience has been very rewarding and motivating.
-
----
-
-## How to run
-
-- Clone the repository.
-- Run `npm install` to install dependencies.
-- Run `npm run dev` to start the development server.
-- Access the app via the local server URL.
-- Navigate the in-game menu to test each task.
+- The **Magic Words** scene includes a built-in vertical scroll area, prepared for future mobile expansion and enhanced touch interaction.
+- The **Phoenix Flame** scene preserves **notable performance** even with visual effects, keeping the active particles capped for stability.
+- Due to the extremely short development time (~5 hours), some bugs and UI glitches persist, especially on mobile.
+- The **resize functionality** currently requires a manual page refresh to properly adjust the game canvas to the new window size.
 
 ---
 
-## Final thanks
+## Challenges
+
+- I have **limited prior experience with Pixi.js (8.0)**, and faced difficulties adapting to version 7.0 since most examples and references are now based on version 8.0.
+- The challenge was assigned around 2 PM with a strict **24-hour deadline**, giving me only half a day of actual working time.
+- To deliver on time, I automated repetitive parts using AI assistance and focused on functionality, readability, and project structure.
+- I’m not fully satisfied with the current polish, but proud of the result considering the time constraints and the learning curve.
+
+---
+
+## How to Run
+
+```bash
+git clone https://github.com/MikixIT/Pixi-Challange-Softgames.git
+cd pixi-challenge
+npm install
+npm run dev
+```
+
+Then open the provided local server URL in your browser to start the app and navigate through the scenes from the main menu.
+
+---
+
+## Final Thanks
 
 Thank you for this exciting challenge. It pushed me to expand my skills, especially in game development with Pixi.js and animation with GSAP. I look forward to your feedback and the possibility to improve further.
 
 ---
 
-_Michael Torres_  
+Michael Torres
 Front-end & Fullstack Developer  
 August 2025

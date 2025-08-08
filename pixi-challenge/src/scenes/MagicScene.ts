@@ -1,11 +1,4 @@
-import {
-  Container,
-  Text,
-  Sprite,
-  TextStyle,
-  Graphics,
-  Rectangle,
-} from "pixi.js";
+import { Container, Text, Sprite, TextStyle, Graphics } from "pixi.js";
 import { app } from "../core/app";
 import { showMenu } from "./MenuScene";
 import { BackButton } from "../objects/BackButton";
